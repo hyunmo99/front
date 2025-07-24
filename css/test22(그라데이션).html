@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test22.html(그라데이션효과)</title>
+    <style>
+      .item {
+        width: 400px;
+        height: 200px;
+        border: 1px solid gray;
+      }
+      #item1 {
+        background-color: green;
+      }
+      #item2 {
+        /* background:linear-gradient(to bottom, #f00, #ff0) ; */
+        background:linear-gradient(to top, #f00, #ff0) ; /* top, bottom, left, right*/
+      }
+      #item3 {
+        background:linear-gradient(45deg, #f00, #ff0) ;
+      }
+      #item4 {
+        background: radial-gradient(circle, #f00, #ff0) ;
+      }
+      #item5 {
+        background: radial-gradient(circle, #f00, #fff) ;
+        border:0px;
+      }
+      #item6 {
+        background: radial-gradient(at top left, #f00, #fff) ;
+      }
+      table {
+        width: 400px;
+        height: 300px;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 20px;
+        text-align: center;
+        border: 1px solid gray;
+      }
+      thead {  
+        /* background: linear-gradient(to right, #f00, #ff0); */
+        background: linear-gradient(to bottom, #f00,#fff, #ff0);
+      }
+      /* tr { */
+      
+    </style>
+</head>
+<body>
+  <h2>그라데이션효과 연습</h2>
+  <div class="item" id="item1">연습1</div>
+  <div class="item" id="item2">연습2</div>
+  <div class="item" id="item3">연습3</div>
+  <div class="item" id="item4">연습4</div>
+  <div class="item" id="item5">연습5</div>
+  <div class="item" id="item6">연습6</div>
+  <hr/>
+  <table>
+    <thead>
+      <tr>
+        <th>01</th>
+        <th>02</th>
+        <th>03</th>
+        <th>04</th>
+      </tr>
+      <tr>
+        <th>05</th>
+        <th>06</th>
+        <th>07</th>
+        <th>08</th>
+      </tr>
+      <tr>
+        <th>15</th>
+        <th>16</th>
+        <th>17</th>
+        <th>18</th>
+      </tr>
+      <tr>
+        <th>25</th>
+        <th>26</th>
+        <th>27</th>
+        <th>28</th>
+      </tr>
+    </thead>
+  </table>
+</body>
+</html>
