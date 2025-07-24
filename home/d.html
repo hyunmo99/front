@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body >
+    <h2>회원가입</h2>
+    <form method="post">
+        <table border="1px" cellspacing="0px" cellpadding="8px" >
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="mid" maxlength="10" autofocus required /></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pwd" id="pwd" maxlength="10"required/></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="name" id="name" size="20" maxlength="10" required /></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td><input type="email" name="email" id="email" required /></td>
+            </tr>
+            <tr>
+                <th>전화번호</th>
+                <td><input type="tel" name="tel" id="tel"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="회원가입"/>
+                    <input type="reset" value="다시입력"/>
+                </td>
+            </tr>
+        </table> 
+
+    </form>
+</body>
+</html>
