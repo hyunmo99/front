@@ -1,0 +1,62 @@
+
+* {
+    margin: 0;
+    padding: 0;url(http://222.116.129.46:5500/ex/ex1.html)
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    width: 80%;
+    height: 50px;
+    padding: 20px 30px;
+    color: #fff;
+    background-color: rgb(95, 93, 93);
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a {
+    font-size: 25px;
+}
+.mainNav {
+    width: 80%;
+    height: 20px;
+    align-items: center;
+    ba
+}
+.mainNav > ul{
+    display: flex;
+}
+
+.topMenuLi {
+    padding: 0px 50px;
+    position: relative;
+}
+.mainMenuLink {
+    display: inline-block;
+    
+}
+.subMenu {
+    /* display: none; */
+    position: absolute; 
+    background-color: #333;
+    top: 120px;
+    border-radius: 10px;
+}
