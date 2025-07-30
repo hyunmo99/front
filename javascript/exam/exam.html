@@ -9,30 +9,80 @@
   <script>
     'use strict';
     function forTest() {
+<<<<<<< HEAD
       let start = document.getElementById("start").value;
       let end = document.getElementById("end").value;
       let row = document.getElementById("row").value;
+=======
+      let start = parseInt(document.getElementById("start").value);
+      let end = parseInt(document.getElementById("end").value);
+      let row = parseInt(document.getElementById("row").value);
+      let demo = document.getElementById("demo");
+>>>>>>> eb571e10b0c0bbafbca552498842e0ec90350c20
 
       if(start>=end) {
-        alert("시작단은 끝단보다 작아야합니다")
+        alert("시작단은 끝단보다 작아야합니다");
+        return;
+      }
+      else if(row>=10 || row<=0) {
+        alert("행 설정 오류");
+        return;
       }
       else {
+        demo.style.gridTemplateColumns = `repeat(${row}, 1fr)`;
+        demo.innerHTML="";
+  
         for(let i=start; i<=end; i++) {
+          let box = document.createElement("div");
+          box.className = "danBox";
+          let html = `<span class="danNum">${i}단</span><br/>`;
           for(let j=1; j<=9; j++) {
-            demo.innerHTML += i+" * "+j+" = "+ i*j+"<br/>";
+            html += `${i} * ${j} = ${i*j}<br/>`;
           }
+          box.innerHTML = html;
+          demo.appendChild(box);
         }
       }
-      let str="";
-      
-      for(let i=0; i<su; i++) {
-        str += `번호 ${i}. 안녕~<br/>`;
-      }
-      document.getElementById("demo").innerHTML = "<b>" + str + "</b>";
+    }
+    function clearAll() {
+      document.getElementById("start").value="1";
+      document.getElementById("end").value="1";
+      document.getElementById("row").value="1";
+      document.getElementById("demo").innerHTML="";
     }
   </script>
+<<<<<<< HEAD
   <style>
     
+=======
+
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+    }
+    .container {
+      width: 1000px;
+      height: 100vh;
+      padding: 20px;
+      background-color: rgb(236, 225, 225);
+    }
+    .container input {
+      margin: 10px auto;
+    }
+    #demo {
+      display: grid;
+      margin: 10px auto;
+      font-size: 20px;
+    }
+    .danBox {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .danNum {
+      font-size: 25px;
+    }
+>>>>>>> eb571e10b0c0bbafbca552498842e0ec90350c20
   </style>
     
 </head>
@@ -49,19 +99,19 @@
     <hr/>
     <p>
       시작단을 입력하세요.
-      <input type="number" name="start" id="start" value="1" autofocus required class="form-control mb-3" />
+      <input type="number" name="start" id="start" value="1" min="0" max="9" autofocus required class="form-control mb-3" />
     </p>
     <p>
       끝단을 입력하세요.
-      <input type="number" name="end" id="end" value="1" autofocus required class="form-control mb-3" />
+      <input type="number" name="end" id="end" value="1" min="0" max="9"  required class="form-control mb-3" />
     </p>
     <p>
       행을 입력하세요.
-      <input type="number" name="row" id="row" value="1" autofocus required class="form-control mb-3" />
+      <input type="number" name="row" id="row" value="1" min="1" max="9"  required class="form-control mb-3" />
     </p>
     <p>
       <input type="button" value="구구단" onclick="forTest()" class="btn btn-success form-control mb-3" />
-      <input type="button" value="초기화" onclick="location.reload" class="btn btn-warning form-control" />
+      <input type="button" value="초기화" onclick="clearAll()" class="btn btn-warning form-control" />
     </p>
     <hr/>
     <div id="demo"></div>
