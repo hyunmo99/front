@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정규식(유효성 검사).html</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+  </script>
+</head>
+<body>
+  <p><br/></p>
+  <div class="container">
+    <h3>이곳은 본문입니다.</h3>
+    <form name="myform" method="post">
+      <div class="input-group mb-3">
+        <div class="input-group-text">아이디</div>
+        <input type="text" name="mid" id="mid" value="hkd1234" class="form-control" autofocus required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">비밀번호</div>
+        <input type="password" name="pwd" id="pwd" value="1234!" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">비밀번호 확인</div>
+        <input type="password" name="repwd" id="repwd" value="1234!" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">닉네임</div>
+        <input type="text" name="nickname" id="nickname" value="홍장군" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">성명</div>
+        <input type="text" name="name" id="name" value="홍길동" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">이메일</div>
+        <input type="email" name="email" id="email" value="hkd1234@naver.com" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">홈페이지</div>
+        <input type="text" name="homepage" id="homepage" value="blog.naver.com/hkd1234" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">전화번호</div>
+        <input type="tell" name="tel" id="tel" value="010-1234-5678" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">주민번호</div>
+        <input type="text" name="jumin" id="jumin" value="123456-1234567" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">생일</div>
+        <input type="date" name="brithday" id="brithday" value="2000-1-1" class="form-control" required />
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-text">자기소개서</div>
+        <textarea rows="4" name="content" id="content" value="hkd1234" class="form-control" required ></textarea>
+      </div>
+      <div class="row">
+        <div class="col"><input type="button" value="회원가입" onclick="fChech()" class="btn btn-success" /></div>
+        <div class="col"><input type="reset" value="다시입력"  class="btn btn-warning" /></div>
+      </div>
+    </form>
+    <hr/>
+    <div id="demo"></div>
+  </div>
+
+</body>
+</html>
