@@ -11,6 +11,8 @@
 
     let num = 0;
     let statusTime;
+    
+
       function plus() {
         clearInterval(statusTime);
         num++;
@@ -34,8 +36,7 @@
     <h3>setInterval</h3>
     <div>사용법 : setInterval(콜백함수, 지연시간), 지연시간 : 1/1000초</div>
     <p>
-      <input type="button" value="증가" onclick="plus()" class="btn btn-success me-2 mt-2" />
-      <input type="button" value="감소" onclick="minus()" class="btn btn-primary me-2" />
+      <input type="button" value="시작" onclick="plus()" class="btn btn-success me-2 mt-2" />
       <input type="button" value="정지" onclick="stop1()" class="btn btn-danger me-2" />
     </p>
     <hr/>
