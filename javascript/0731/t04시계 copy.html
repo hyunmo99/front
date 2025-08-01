@@ -9,7 +9,7 @@
   <script>
     'use strict';
     let statusTime;
-    let num=10;
+    let num=1;
     function clock() {
       const today = new Date();
       const hh = today.getHours();
@@ -22,16 +22,14 @@
       statusTime = setTimeout(strat, 1000);
     }
     function stratsss() {
-      if(num==99) num=10;
+      if(num==99) num=1;
       num++;
       asd.innerHTML = num;
-      statusTime = setTimeout(stratsss, 11.111111111);
+      statusTime = setTimeout(stratsss, 10);
     }
-    
     function stop() {
       clearTimeout(statusTime);
     }
-    
   </script>
 </head>
 <body>
