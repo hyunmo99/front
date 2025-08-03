@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex08.html</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let statusTime;
+    let num1, num2, num3, cnt=0;
+
+    $(function () {
+      //시작
+      $("#btnStart").click(function () {
+        $("#btnStart").hide();
+        $("#btnStop").show();
+        $("#res").hide();
+        cnt++;
+        randomImg();
+        statusTime = setInterval(randomImg, 100);
+
+      });
+      //이미지
+      function randomImg() {
+        num1 =parseInt((Math.random()*6)+1);
+        num2 =parseInt((Math.random()*6)+1);
+        num3 =parseInt((Math.random()*6)+1);
+
+        let str = `<div class="img${num1}"><img src="../../images/${num1}.jpg" style="width: 150px; height:150px"alt=""></div>`;
+        str += `<div class="img${num2}"><img src="../../images/${num2}.jpg" style="width: 150px; height:150px"alt=""></div>`;
+        str += `<div class="img${num3}"><img src="../../images/${num3}.jpg" style="width: 150px; height:150px"alt=""></div>`;
+        
+        $("#demo").html(str);
+      }
+      //멈춤
+      $("#btnStop").click(function () {
+        clearInterval(statusTime);
+        $("#btnStop").hide();
+        $("#btnStart").show();
+        let dividend = $("#in").val();
+        let str = `<p>총 수행 횟수 : ${cnt}</p>`; 
+
+        if(num1 == num2 && num1 == num3){
+          dividend *=(num1*10);
+          str += `<p style="color: green; font-weight: bolder;">축하드립니다.<br/>배당금 : ${dividend}원</p>`;
+        }
+        else if(num1==num2 || num1==num3){
+          dividend = (num1*10)*(dividend*0.1);
+          str += `<p style="color: rgb(222, 182, 36); font-weight: bolder;">아깝습니다. 좀더 분발하세요.<br/>배당금 : ${dividend}원</p>`;
+        }
+        else if(num2==num3){
+          dividend = (num2*10)*(dividend*0.05);
+          str += `<p style="color: rgb(222, 182, 36); font-weight: bolder;">아깝습니다. 좀더 분발하세요.<br/>배당금 : ${dividend}원</p>`;
+        }
+        else {
+          dividend = 0;
+          str += `<p style="color: rgb(205, 58, 47); font-weight: bolder;">운이 없으시군요. 다음기회에~~<br/>배당금 : ${dividend}원</p>`;
+        }
+        str += `<div class="row"><input type="button" value="다시하기" onclick="location.reload()" class="btn btn-primary"/></div>`
+        res.innerHTML = str;
+        $("#res").show();
+
+
+      });
+    });
+  </script>
+
+  <style>
+    *{
+      justify-content: space-around;
+    }
+  </style>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h1>JACKPOT GAME</h1>
+  <hr/>
+  <div class="row">
+    <div class="col-2 text-center"><img src="../../images/1.jpg" style="width: 120px; height:100px"alt=""><br/>X10</div>
+    <div class="col-2 text-center"><img src="../../images/2.jpg" style="width: 120px; height:100px"alt=""><br/>X20</div>
+    <div class="col-2 text-center"><img src="../../images/3.jpg" style="width: 120px; height:100px"alt=""><br/>X30</div>
+    <div class="col-2 text-center"><img src="../../images/4.jpg" style="width: 120px; height:100px"alt=""><br/>X40</div>
+    <div class="col-2 text-center"><img src="../../images/5.jpg" style="width: 120px; height:100px"alt=""><br/>X50</div>
+    <div class="col-2 text-center"><img src="../../images/6.jpg"style="width: 120px; height:100px"alt=""><br/>X60</div>
+  </div>
+  <hr/>
+  <div>
+    <p>-3장의 그림이 맞으면 '배팅금액 * 그림액면수' 만큼긔 배당금이 지급됩니다.<br/>
+      -2장의 그림이 맞으면 해당 '그림액면수 * (배팅금액의 5% or 10%)'가 지급됩니다.<br/>
+      (1번-2번, 1번-3번이 맞으면 10%, 2번 3번이 맞으면 5%)<br/>
+      -일치하는 그림이 없으면 배팅금액은 모두 사라집니다. 
+    </p>
+  </div>
+  <hr/>
+  <div class="d-flex align-items-center justify-content-center m-4">
+    <label for="in" class="me-4">배팅할 금액을 입력하세요</label>
+    <input type="number" value="100000" class="form-control w-25" id="in">
+  </div>
+  <div class="row">
+    <button class="btn btn-success" name="btnStart" id="btnStart">잭팟을 돌려주세요</button>
+    <button class="btn btn-danger" name="btnStop" id="btnStop" style="display: none;">멈춰주세요</button>
+  </div>
+  <hr/>
+  <div class="d-flex justify-content: space-around" id="demo"></div>
+  <hr/>
+  <div id="res" style="text-align: center;"></div>
+  
+</body>
+</html>
